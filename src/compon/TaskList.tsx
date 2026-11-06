@@ -1,0 +1,23 @@
+import type { Task } from "../App"
+import TaskItem from "./TaskItem"
+
+type TaskListProps = {
+    tasks: Task[]
+}
+function TaskList({tasks}: TaskListProps) {
+
+    return (
+        <div className="task-list">
+            {tasks.map((task) => (
+                <TaskItem
+                    key={task.id}
+                    id={task.id}
+                    title={task.title}
+                    done={task.done}
+                />
+            ))}
+        </div>
+    )
+}
+
+export default TaskList
